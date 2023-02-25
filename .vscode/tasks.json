@@ -1,0 +1,162 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "new",
+			"type": "shell",
+			"command": "cargo",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$rustc"
+			],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": true
+			},
+			"args": [
+				"new",
+				"test1"  // 这里使用你想使用的包名
+			],
+		},
+		{
+			"label": "build",
+			"type": "shell",
+			"command": "cargo build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": true
+			},
+			"options": {
+				"cwd": "hello"   // 这里需要替换成你想 build 的包名
+			},
+			"problemMatcher": [
+				"$rustc"
+			],
+		},
+		{
+			"label": "check",
+			"type": "shell",
+			"command": "cargo check",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": true
+			},
+			"options": {
+				"cwd": "hello"   // 这里需要替换成你想 build 的包名
+			},
+			"problemMatcher": [
+				"$rustc"
+			],
+		},
+		{
+			"label": "clippy",
+			"type": "shell",
+			"command": "cargo clippy",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": true
+			},
+			"options": {
+				"cwd": "hello"   // 这里需要替换成你想 build 的包名
+			},
+			"problemMatcher": [
+				"$rustc"
+			],
+		},
+		{
+			"label": "clean",
+			"type": "shell",
+			"command": "cargo clean",
+			"options": {
+				"cwd": "hello"   // 这里需要替换成你想 clean 的包名
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$rustc"
+			],
+			"dependsOn": ["build"]
+		},
+		{
+			"label": "run",
+			"type": "shell",
+			"command": "cargo run",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": true
+			},
+			"problemMatcher": [
+				"$rustc"
+			],
+			"options": {
+				"cwd": "struct_demo"   // 这里需要替换成你想 run 的包名
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+		},
+		{
+			"label": "bench",
+			"type": "shell",
+			"command": "cargo bench",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": true
+			},
+			"problemMatcher": [
+				"$rustc"
+			],
+			"options": {
+				"cwd": "hello"   // 这里需要替换成你想 test 的包名
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+		},
+	]
+}

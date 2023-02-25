@@ -1,0 +1,26 @@
+# 必须存在
+[package]
+name = "workspace_demo"
+version = "1.0.0"
+edition = "2021"
+
+# 不必须
+[dependencies]
+rand = "0.8.3"
+
+# 必须存在
+[workspace]
+members=[
+    "adder",
+    "add_one",
+]
+
+# 必须存在，name 和 path 两个参数必须都存在
+[[bin]]
+name = "adder"
+path = "adder/src/main.rs"
+
+# 必须存在，name 和 path 两个参数必须都存在
+[lib]
+name = "add_one"
+path = "add_one/src/lib.rs"
